@@ -1,15 +1,24 @@
 .loaderWrapper {
+    .shimmer {
+        animation-name: shimmer;
+        animation-duration: 3s;
+        background: linear-gradient(to right, #eeeeee 8%, #bbbbbb 18%, #eeeeee 33%);
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
+
     .imageWrapper {
         height: 300px;
         width: 50%;
         border-radius: 4px;
         margin-bottom: 1rem;
-        background: #f6f7f8;
+        background-color: #f6f7f8;
     }
 
     .textWrapper {
         .textShimmer {
-            background: #f6f7f8;
+            background-color: #f6f7f8;
             height: 50px;
             margin-bottom: 1rem;
 
@@ -18,5 +27,16 @@
                 width: 80%;
             }
         }
+    }
+}
+
+
+@keyframes shimmer {
+    0% {
+        background-position: -800px 0;
+    }
+
+    100% {
+        background-position: 800px 0;
     }
 }

@@ -5,13 +5,16 @@ import React from 'react';
 import styles from './Loader.scss';
 
 const Loader = () => {
+    let imageClasses = [styles.imageWrapper, styles.shimmer];
+    let textClasses = [styles.textShimmer, styles.shimmer];
+
     return (
         <div className={styles.loaderWrapper}>
-            <div className={styles.imageWrapper}></div>
+            <div className={imageClasses.join(' ')}></div>
             <div className={styles.textWrapper}>
-                <div className={styles.textShimmer} />
-                <div className={styles.textShimmer} />
-                <div className={styles.textShimmer} />                
+                <div className={textClasses.join(' ')} />
+                <div className={textClasses.join(' ')} />
+                <div className={textClasses.join(' ')} />                
             </div>
         </div>
     )
