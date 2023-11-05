@@ -9,15 +9,17 @@
     }
 
     .imageWrapper {
-        height: 300px;
-        width: 50%;
-        border-radius: 4px;
-        margin-bottom: 1rem;
-        background-color: #f6f7f8;
+        .imageElement {
+            height: 300px;
+            width: 50%;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            background-color: #f6f7f8;
+        }
     }
 
     .textWrapper {
-        .textShimmer {
+        .textElement {
             background-color: #f6f7f8;
             height: 50px;
             margin-bottom: 1rem;
