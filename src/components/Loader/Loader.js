@@ -15,6 +15,7 @@ const LoaderProps = {
 const Loader = (props) => {
     /* Classes initialisation */
     let imageClasses = [styles.imageElement, styles.shimmer];
+    let imageWrapperClasses = [styles.imageWrapper];
     let textClasses = [styles.textElement, styles.shimmer];
 
     /* Elements initialisation */
@@ -22,9 +23,15 @@ const Loader = (props) => {
     let textShimmer = null;
 
     if(props.displayImages) {
+        if(props.multipleImages) imageWrapperClasses.push(styles.multipleImages);
         imageShimmer = (
-            <div className={styles.imageWrapper}>
+            <div className={imageWrapperClasses.join(' ')}>
                 <div className={imageClasses.join(' ')} />
+                {
+                    props.multipleImages ?
+                    (<div className={imageClasses.join(' ')} />) :
+                    null
+                }
             </div>
         );
     }
