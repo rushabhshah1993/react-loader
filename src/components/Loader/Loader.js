@@ -15,7 +15,7 @@ const LoaderProps = {
 
 const Loader = (props) => {
     /* States initialisation */
-    const [pausedAnimation, pauseAnimation] = useState(true);
+    const [pausedAnimation, pauseAnimation] = useState(false);
 
     /* Classes initialisation */
     let imageClasses = [styles.imageElement, styles.shimmer];
