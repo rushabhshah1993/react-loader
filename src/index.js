@@ -3,12 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 /* Component imports */
-import Loader from '@/components/Loader/Loader';
+import Home from '@/pages/Home';
 
 /* Style imports */
 import './index.scss';
 
 ReactDOM.render(
-    <Loader />,
+    <Home />,
     document.getElementById('root')
 );

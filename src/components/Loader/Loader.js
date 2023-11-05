@@ -6,11 +6,13 @@ import PropTypes from 'prop-types';
 import styles from './Loader.scss';
 
 const LoaderProps = {
-    count: PropTypes.number,
+    alternateAnimation: PropTypes.bool,
+    count: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     displayImages: PropTypes.bool,
     displayText: PropTypes.bool,
+    durationInSeconds: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     multipleImages: PropTypes.bool,
-    textCount: PropTypes.number
+    textCount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
 
 const Loader = (props) => {
@@ -22,21 +24,32 @@ const Loader = (props) => {
     let imageWrapperClasses = [styles.imageWrapper];
     let textClasses = [styles.textElement, styles.shimmer];
 
-    /* Elements initialisation */
+    /* Elements and variables initialisation */
     let imageShimmer = null;
     let textShimmer = null;
+    let durationInSeconds = null;
+
+    if(props.durationInSeconds) {
+        imageClasses.push({animationDuration: `${props.durationInSeconds}s`});
+        textClasses.push({animationDuration: `${props.durationInSeconds}s`});
+    }
 
     if(props.displayImages) {
         let animationPlayState = 'initial';
+        let elementStyle = {};
 
         if(props.multipleImages) imageWrapperClasses.push(styles.multipleImages);
         if(props.displayImages && props.displayText) {
             animationPlayState =  pausedAnimation ? 'paused' : 'running';
+            elementStyle['animationPlayState'] = animationPlayState;
+        }
+        if(props.durationInSeconds) {
+            elementStyle['animationDuration'] = `${props.durationInSeconds}s`;
         }
 
         imageShimmer = (
             <div className={imageWrapperClasses.join(' ')}>
-                <div className={imageClasses.join(' ')} style={{animationPlayState: animationPlayState }} />
+                <div className={imageClasses.join(' ')} style={elementStyle} />
                 {
                     props.multipleImages ?
                     (<div className={imageClasses.join(' ')} style={{animationPlayState: animationPlayState }} />) :
@@ -48,9 +61,14 @@ const Loader = (props) => {
 
     if(props.displayText) {
         let animationPlayState = 'initial';
+        let elementStyle = {};
 
         if(props.displayImages && props.displayText) {
             animationPlayState =  pausedAnimation ? 'running' : 'paused';
+            elementStyle['animationPlayState'] = animationPlayState;
+        }
+        if(props.durationInSeconds) {
+            elementStyle['animationDuration'] = `${props.durationInSeconds}s`;
         }
 
         let textElements = [];
@@ -58,7 +76,7 @@ const Loader = (props) => {
             textElements.push(
                 <div 
                     className={textClasses.join(' ')} 
-                    style={{animationPlayState: animationPlayState }}
+                    style={elementStyle}
                     key={`element_${idx}`} />
             );
         }
@@ -73,12 +91,14 @@ const Loader = (props) => {
 
     /* useEffects */
     useEffect(() => {
-        if(props.displayImages && props.displayText) {
+        if(props.displayImages && props.displayText && props.alternateAnimation) {
             let counter = 0;
+            let animationDuration = props.durationInSeconds ? props.durationInSeconds*1000 : 3000;
+
             const timeout = setInterval(() => {
                 alternateAnimation(counter);
                 counter++;
-            }, 3000);
+            }, animationDuration);
 
             return () => clearTimeout(timeout);
         }
@@ -101,9 +121,11 @@ const Loader = (props) => {
 
 Loader.propTypes = LoaderProps;
 Loader.defaultProps = {
+    alternateAnimation: true,
     count: 1,
     displayImages: true,
     displayText: true,
+    durationInSeconds: 3,
     multipleImages: false,
     textCount: 3
 }

@@ -1,0 +1,17 @@
+.homeWrapper {
+    .header {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #EEEEEE;
+        background: #2C3E50;
+        color: #FFFFFF;
+        text-transform: uppercase;
+    }
+    
+    .bodyContainer {
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+}
