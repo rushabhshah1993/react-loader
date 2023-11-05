@@ -27,7 +27,6 @@ const Loader = (props) => {
     /* Elements and variables initialisation */
     let imageShimmer = null;
     let textShimmer = null;
-    let durationInSeconds = null;
 
     if(props.durationInSeconds) {
         imageClasses.push({animationDuration: `${props.durationInSeconds}s`});
@@ -63,7 +62,7 @@ const Loader = (props) => {
         let animationPlayState = 'initial';
         let elementStyle = {};
 
-        if(props.displayImages && props.displayText) {
+        if(props.displayImages && props.displayText && props.alternateAnimation) {
             animationPlayState =  pausedAnimation ? 'running' : 'paused';
             elementStyle['animationPlayState'] = animationPlayState;
         }
