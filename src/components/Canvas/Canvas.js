@@ -36,8 +36,7 @@ const Canvas = () => {
         if(id === TYPES_OF_LOADERS.MULTIPLE_LOADERS) {
             return (
                 <div>
-                    <Loader />
-                    <Loader />
+                    <Loader count={2} />
                 </div>
             )
         }
@@ -48,7 +47,14 @@ const Canvas = () => {
     return (
         <div className={styles.canvas}>
             <p>{loaderData.title}</p>
+            <p className={styles.subtitle}>{loaderData.subtitle}</p>
             { loaderElement }
+            <hr />
+            <p>{loaderData.description}</p>
+            <div>
+                <p>Configuration:</p>
+                {loaderData.config}
+            </div>
         </div>
     )
 }

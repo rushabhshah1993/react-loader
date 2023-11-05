@@ -2,4 +2,9 @@
     padding: 8px;
     height: calc(100vh - 50px - 16px);
     overflow-y: scroll;
+
+    .subtitle {
+        font-size: 12px;
+        color: #333333;
+    }
 }

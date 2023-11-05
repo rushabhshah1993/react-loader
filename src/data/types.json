@@ -1,63 +1,63 @@
 [
     {
         "id": "STANDARD",
-        "default_config": "",
+        "config": "{alternateAnimation: true, count: 1, displayImages: true, displayText: true, durationInSeconds: 3, multipleImages: false, textCount: 3}",
         "description": "A standard loader has a space for an image and a space for text that alternates animation between the two for three seconds.",
-        "subtitle": "A standard Loader with one image and one text",
+        "subtitle": "A standard loader with one image and one text",
         "title": "Standard Loader"
     },
     {
         "id": "CUSTOM_ONLY_IMAGE",
-        "default_config": "",
+        "config": "{alternateAnimation: true, count: 1, displayImages: true, displayText: false, durationInSeconds: 3, multipleImages: false, textCount: 3}",
         "description": "This loader will show only one image, that keeps animating for a default three seconds.",
         "subtitle": "A custom loader for a sole image",
         "title": "Only One Image"
     },
     {
         "id": "CUSTOM_ONLY_TEXT",
-        "default_config": "",
+        "config": "{alternateAnimation: true, count: 1, displayImages: false, displayText: false, durationInSeconds: 3, multipleImages: false, textCount: 3}",
         "description": "This loader will show only the text content, that keeps animating for a default three seconds.",
         "subtitle": "A custom loader for only text content",
         "title": "Only Text Content"
     },
     {
         "id": "CUSTOM_ONLY_TWO_IMAGES",
-        "default_config": "",
+        "config": "{alternateAnimation: true, count: 1, displayImages: true, displayText: false, durationInSeconds: 3, multipleImages: true, textCount: 3}",
         "description": "This loader will show two images side-by-side, that keep animating for a default three seconds.",
         "subtitle": "A custom loader showing multiple images (maximum two)",
         "title": "Only Two Images"
     },
     {
         "id": "CUSTOM_TWO_IMAGES_AND_TEXT",
-        "default_config": "",
+        "config": "{alternateAnimation: true, count: 1, displayImages: true, displayText: true, durationInSeconds: 3, multipleImages: true, textCount: 3}",
         "description": "This loader will show two images side-by-side and a text shimmer with three rows, that keep animating for a default three seconds alternatively.",
         "subtitle": "A custom loader showing multiple images (maximum two) and standard text",
         "title": "Two Images and Text"
     },
     {
         "id": "CUSTOM_ONE_IMAGE_AND_USERDEFINED_TEXT_LINES",
-        "default_config": "",
+        "config": "{alternateAnimation: true, count: 1, displayImages: true, displayText: true, durationInSeconds: 3, multipleImages: false, textCount: 5}",
         "description": "This loader will show one image and a text shimmer with user-defined rows, that keep animating for a default three seconds alternatively.",
         "subtitle": "A custom loader showing one image and user-defined text lines",
         "title": "One Image and User Defined Text Rows"
     },
     {
         "id": "STANDARD_NO_ALTERNATE_ANIMATION",
-        "default_config": "",
+        "config": "{alternateAnimation: false, count: 1, displayImages: true, displayText: true, durationInSeconds: 3, multipleImages: false, textCount: 3}",
         "description": "This loader will show one image and a text shimmer with three rows, that keep animating for a default three seconds together in sync.",
         "subtitle": "A standard loader that does not alternate the animation between the text and images",
         "title": "No Alternating Animation"
     },
     {
         "id": "STANDARD_USERDEFINED_ANIMATION_TIME",
-        "default_config": "",
-        "description": "This loader will show one image and a text shimmer with three rows, that keep animating for a default three seconds alternatively.",
+        "config": "{alternateAnimation: true, count: 1, displayImages: true, displayText: true, durationInSeconds: 10, multipleImages: false, textCount: 3}",
+        "description": "This loader will show one image and a text shimmer with three rows, that keep animating for time specified by the user alternatively.",
         "subtitle": "A standard loader that runs for user-defined animation time",
         "title": "User Defined Animation Duration"
     },
     {
         "id": "MULTIPLE_LOADERS",
-        "default_config": "",
+        "config": "{alternateAnimation: true, count: 2, displayImages: true, displayText: true, durationInSeconds: 3, multipleImages: false, textCount: 3}",
         "description": "This loader will show user-defined multiple containers of one image and a text shimmer with three rows, that keep animating for a default three seconds alternatively.",
         "subtitle": "Multiple loaders, where user defines the number of loader containers to be shown",
         "title": "Multiple Loaders"

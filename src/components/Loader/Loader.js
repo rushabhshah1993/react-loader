@@ -87,6 +87,16 @@ const Loader = (props) => {
         )
     }
 
+    const loaderContainer = [];
+    for(let idx = 0; idx < props.count; idx++) {
+        loaderContainer.push(
+            <div className={styles.loaderWrapper} key={`loader_${idx}`}>
+                { imageShimmer }
+                { textShimmer }
+            </div>
+        );
+    }
+
 
     /* useEffects */
     useEffect(() => {
@@ -110,12 +120,7 @@ const Loader = (props) => {
         else pauseAnimation(true);
     }
  
-    return (
-        <div className={styles.loaderWrapper}>
-            { imageShimmer }
-            { textShimmer }
-        </div>
-    )
+    return loaderContainer;
 }
 
 Loader.propTypes = LoaderProps;
