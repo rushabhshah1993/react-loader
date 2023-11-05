@@ -1,0 +1,22 @@
+.loaderWrapper {
+    .imageWrapper {
+        height: 300px;
+        width: 50%;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        background: #f6f7f8;
+    }
+
+    .textWrapper {
+        .textShimmer {
+            background: #f6f7f8;
+            height: 50px;
+            margin-bottom: 1rem;
+
+            &:last-child {
+                margin-bottom: 0;
+                width: 80%;
+            }
+        }
+    }
+}
