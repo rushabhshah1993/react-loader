@@ -1,0 +1,1 @@
+export const SELECT_LOADER_TYPE = 'SELECT_LOADER_TYPE';

@@ -1,5 +1,22 @@
 .sidebar {
     background: #E0F2E9;
-    height: calc(100vh - 50px - 1px);
+    height: calc(100vh - 50px - 16px);
     padding: 8px;
+
+    .sectionTitle {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .listItem {
+        margin: 0;
+        padding: 8px 2px;
+        cursor: pointer;
+
+        &.activeListItem {
+            background-color: #2C3E50;
+            color: #FFFFFF;
+        }
+    }
+
 }

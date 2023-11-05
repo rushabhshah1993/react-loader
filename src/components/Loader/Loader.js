@@ -101,7 +101,7 @@ const Loader = (props) => {
 
             return () => clearTimeout(timeout);
         }
-    }, []);
+    }, [props.durationInSeconds]);
 
 
     /* Functions */
